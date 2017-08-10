@@ -21,7 +21,7 @@ def anon(message):
 		resp = resp.replace('Да','пакет говна')
 	elif message.text == 'пидор' or message.text == 'Пидор':
 		resp = 'сладкий' 
-	bot.send_message(message.chat.id, resp, parse_mode = 'HTML')
+	bot.reply_to(message, resp, parse_mode = 'HTML')
 
 def answer_yes(varik):
 	if varik == 1:
