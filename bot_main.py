@@ -9,8 +9,10 @@ def anon(message):
 	resp = ''
 	if message.text[-2:] == 'да' or message.text[-2:] == 'da' or message.text[-2:] == 'Да':
 		resp = answer_yes(random.randint(1,3))
-	elif message.text[-3:] == 'нет' or message.text[-3:] == 'Нет' or message.text[-3:] == 'net' or message.text[-3:] == 'niet' or message.text[-3:] == 'нит':
+	elif message.text[-3:] == 'нет' or message.text[-3:] == 'Нет' or message.text[-3:] == 'net' or message.text[-4:] == 'niet':
 		resp = answer_no(random.randint(1,3))
+	elif message.text[-3:] == 'нит':
+		resp = 'говна пакит'
 	elif message.text[:2] == 'да' and not message.text == 'да':
 		resp = message.text
 		resp = resp.replace('да','пакет говна')
@@ -18,24 +20,24 @@ def anon(message):
 		resp = message.text
 		resp = resp.replace('Да','пакет говна')
 	elif message.text == 'пидор' or message.text == 'Пидор':
-		resp = 'Сладкий' 
+		resp = 'сладкий' 
 	bot.send_message(message.chat.id, resp, parse_mode = 'HTML')
 
 def answer_yes(varik):
 	if varik == 1:
-		return 'Пизда'
+		return 'пизда'
 	elif varik == 2:
-		return 'Пидора слова'
+		return 'пидора слова'
 	elif varik == 3:
-		return 'Манда'
+		return 'манда'
 
 def answer_no(varik):
 	if varik == 1:
-		return 'Пидора ответ'
+		return 'пидора ответ'
 	elif varik == 2:
-		return 'Говна пакет'
+		return 'говна пакет'
 	elif varik == 3:
-		return 'Сделай минет'
+		return 'сделай минет'
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
