@@ -7,10 +7,14 @@ bot = telebot.TeleBot(access_token)
 @bot.message_handler(content_types=['text'])
 def anon(message):
 	resp = ''
-	if message.text[-2:] == 'да':
+	if message.text[-2:] == 'да' or message.text[-2:] == 'Да' or message.text[-2:] == 'ДА' or message.text[-2:] == 'дА':
 		resp = 'пакет говна'
+	elif message.text[-3:] == 'дыа' or message.text[-3:] == 'Дыа':
+		resp = 'пакет говныа'
 	elif message.text[-3:] == 'нет' :
 		resp = 'говна пакет'
+	elif message.text[-3:] == 'нетик' :
+		resp = 'говна пакетик'
 	elif message.text[-3:] == 'нит':
 		resp = 'гавна пакит'
 	elif message.text[-2:] == 'da':
