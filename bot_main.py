@@ -54,6 +54,14 @@ def anon(message):
 	elif message.text == 'пидор' or message.text == 'Пидор':
 		resp = 'сладкий'
 		bot.reply_to(message, resp, parse_mode = 'HTML')
+	elif message.text[:3] == 'нет' and not message.text == 'нет':
+		resp = message.text
+		resp = resp.replace('нет','говна пакет')
+		bot.reply_to(message, resp, parse_mode = 'HTML')
+	elif message.text[:3] == 'Нет' and not message.text == 'Нет':
+		resp = message.text
+		resp = resp.replace('Нет','Говна пакет')
+		bot.reply_to(message, resp, parse_mode = 'HTML')
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
