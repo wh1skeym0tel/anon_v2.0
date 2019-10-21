@@ -1,7 +1,7 @@
 import telebot
 import random
 
-access_token = "377231647:AAGdE6s4jc4QZtzmungq5KLdAvyPKSNWerU"
+access_token = "insert_your_one"
 bot = telebot.TeleBot(access_token)
 
 @bot.message_handler(content_types=['text'])
